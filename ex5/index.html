@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercice 5</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <button ng-click="showMe=true">Afficher</button>
+    <button ng-click="showMe=false">Cacher</button>
+    <div ng-show="showMe">
+      <div>Bonjour</div>
+    </div>
+  </div>
+  <script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope) {
+    $scope.showMe = false;
+    $scope.myFunc = function() {
+      $scope.showMe = !$scope.showMe;
+    }
+  });
+  </script>
+</body>
+</html>
